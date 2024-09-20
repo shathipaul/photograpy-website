@@ -17,9 +17,20 @@ body {
   font-style: normal;
 }
 
-.playfairDisplayFont {
+.titleFont {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+.widget {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 200%;
+    height: calc(50% + 35px);
+    bottom: 0;
+    left: -50%;
+    background-color: #f5f0eb;
 }

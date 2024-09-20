@@ -3,7 +3,23 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        zoomIn: {
+          "0%": {
+            opacity: 0,
+            transform: "scale(0.5)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "scale(1)",
+          },
+        },
+      },
+      animation: {
+        zoomIn: "zoomIn 0.5s ease-in-out forwards",
+      },
+    },
     // our colors theme
     colors: {
       primary: "#262826",
@@ -18,7 +34,7 @@ module.exports = {
         md: "768px",
         lg: "1024px",
         xl: "1280px",
-        xxl: "1536px",
+        xxl: "1400px",
       },
     },
   },

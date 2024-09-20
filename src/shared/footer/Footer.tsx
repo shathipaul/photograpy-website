@@ -11,13 +11,13 @@ import {
 
 const Footer = () => {
   return (
-    <div>
+    <>
       <div className="bg-white grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 items-center justify-items-center py-10 md:py-20">
-        <Link href={"/"} className="max-w-[200px] m-auto md:hidden">
+        <Link href={"/"} className="max-w-[160px] m-auto md:hidden">
           <Image className="w-full" src={logo} alt="" priority />
         </Link>
         <div className="text-center">
-          <h4 className="playfairDisplayFont tracking-widest text-3xl font-bold">
+          <h4 className="titleFont tracking-widest text-3xl font-bold">
             Follow Us
           </h4>
           <div className="py-4 flex justify-center gap-1 text-xl text-secondary">
@@ -28,11 +28,11 @@ const Footer = () => {
           </div>
           <p className="text-secondary">Solene@qodeinteractive.com</p>
         </div>
-        <Link href={"/"} className="max-w-[200px] m-auto hidden md:block">
+        <Link href={"/"} className="max-w-[160px] m-auto hidden md:block">
           <Image className="w-full" src={logo} alt="" priority />
         </Link>
         <div className="text-center border-b border-[#E5E7E2]">
-          <h4 className="playfairDisplayFont tracking-widest text-3xl font-bold">
+          <h4 className="titleFont tracking-widest text-3xl font-bold">
             NEWSLETTER
           </h4>
           <p className="text-secondary py-4">Follow our latest stories.</p>
@@ -46,7 +46,7 @@ const Footer = () => {
       <div className="bg-[#E5E7E2] text-secondary flex justify-center items-center py-4">
         <p>© 2020 Qode Interactive, All Rights Reserved</p>
       </div>
-    </div>
+    </>
   );
 };
 
