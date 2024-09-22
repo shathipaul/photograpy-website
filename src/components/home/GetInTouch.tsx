@@ -8,7 +8,7 @@ const GetInTouch = () => {
       <div className="max-w-[400px]">
         <Image className="w-full" src={image} alt="" />
       </div>
-      <h2 className="titleFont text-primary tracking-widest text-center text-3xl md:text-5xl font-bold">
+      <h2 className="titleFont uppercase text-primary tracking-widest text-center text-3xl lg:text-5xl font-bold">
         You just enjoy your day!
       </h2>
       <p className="max-w-3xl text-center text-secondary px-4 pb-6">

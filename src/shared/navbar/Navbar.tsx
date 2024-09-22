@@ -45,29 +45,29 @@ const Navbar = () => {
   }, [isOpen]);
   const menuData = [
     { title: "Home", link: "/" },
-    { title: "Pages", link: "/" },
-    { title: "Work", link: "/" },
-    { title: "Blog", link: "/" },
+    { title: "About", link: "/" },
+    { title: "Services", link: "/services" },
+    { title: "Blogs", link: "/" },
     { title: "Pricing", link: "/" },
     { title: "Contact", link: "/" },
   ];
   const menuItemsLeft = [
     { title: "Home", link: "/" },
-    { title: "Pages", link: "/" },
-    { title: "Work", link: "/" },
+    { title: "About", link: "/" },
+    { title: "Services", link: "/services" },
   ];
   const menuItemsRight = [
-    { title: "Blog", link: "/" },
+    { title: "Blogs", link: "/" },
     { title: "Pricing", link: "/" },
     { title: "Contact", link: "/" },
   ];
   return (
-    <nav className="bg-white">
+    <nav className="bg-offWhite">
       <div className="hidden container md:grid grid-cols-3 items-center py-4">
         <ul className=" titleFont text-primary text-base tracking-widest grid grid-cols-3 justify-items-center">
           {menuItemsLeft.map((data, index) => (
             <li key={index}>
-              <Link href={"/"}>{data.title}</Link>
+              <Link href={data.link}>{data.title}</Link>
             </li>
           ))}
         </ul>
@@ -77,13 +77,13 @@ const Navbar = () => {
         <ul className="titleFont text-primary text-base tracking-widest grid grid-cols-3 justify-items-center">
           {menuItemsRight.map((data, index) => (
             <li key={index}>
-              <Link href={"/"}>{data.title}</Link>
+              <Link href={data.link}>{data.title}</Link>
             </li>
           ))}
         </ul>
       </div>
       {/* Mobile Nav */}
-      <div className="md:hidden my-2">
+      <div className="md:hidden py-2">
         <div className="flex justify-between items-center">
           <div className="flex justify-end">
             <Hamburger size={26} toggled={isOpen} toggle={setOpen} />

@@ -9,10 +9,10 @@ import image6 from "@/assets/images/home/follow/6.jpg";
 const Follow = () => {
   return (
     <div className="flex flex-col justify-items-center items-center gap-4 lg:gap-6 py-4 md:py-8">
-      <h3 className="titleFont uppercase text-primary tracking-widest text-center text-3xl md:text-5xl font-bold">
+      <h3 className="titleFont uppercase text-primary tracking-widest text-center text-3xl lg:text-5xl font-bold">
         Follow me on Instagram
       </h3>
-      <span className="md:pb-6 text-secondary">@my_wedding_day</span>
+      <span className="md:pb-6 text-secondary">@georgia_photography</span>
       <div className="grid grid-cols-2 lg:grid-cols-6 gap-2 md:gap-6 lg:gap-10 p-6 md:p-10">
         <div className="mb-10">
           <Image src={image1} alt="" />

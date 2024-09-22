@@ -26,6 +26,8 @@ module.exports = {
       secondary: "#6E717A",
       black: "#000000",
       white: "#ffffff",
+      offWhite: "#FAF9F6",
+      catSkillWhite: "#E5E7E2",
     },
     container: {
       center: true,

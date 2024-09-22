@@ -12,7 +12,7 @@ import {
 const Footer = () => {
   return (
     <>
-      <div className="bg-white grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 items-center justify-items-center py-10 md:py-20">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 items-center justify-items-center py-10 md:py-20 bg-offWhite">
         <Link href={"/"} className="max-w-[160px] m-auto md:hidden">
           <Image className="w-full" src={logo} alt="" priority />
         </Link>
@@ -31,19 +31,19 @@ const Footer = () => {
         <Link href={"/"} className="max-w-[160px] m-auto hidden md:block">
           <Image className="w-full" src={logo} alt="" priority />
         </Link>
-        <div className="text-center border-b border-[#E5E7E2]">
+        <div className="text-center border-b border-catSkillWhite">
           <h4 className="titleFont tracking-widest text-3xl font-bold">
             NEWSLETTER
           </h4>
           <p className="text-secondary py-4">Follow our latest stories.</p>
           <input
-            className="focus:outline-none"
+            className="focus:outline-none bg-offWhite"
             type="email"
             placeholder="Email"
           />
         </div>
       </div>
-      <div className="bg-[#E5E7E2] text-secondary flex justify-center items-center py-4">
+      <div className="bg-catSkillWhite text-secondary flex justify-center items-center py-4">
         <p>© 2020 Qode Interactive, All Rights Reserved</p>
       </div>
     </>
