@@ -9,66 +9,91 @@ import image7 from "@/assets/images/anotherWedding/2.jpg";
 import image8 from "@/assets/images/anotherWedding/7.jpg";
 import image9 from "@/assets/images/anotherWedding/4.jpg";
 import image10 from "@/assets/images/anotherWedding/11.jpg";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.css";
+import { Pagination } from "swiper/modules";
+interface IServiceData {
+  _id: string;
+  serviceName: string;
+  serviceCardImage: string;
+  serviceTakerName: string;
+  serviceCardDescription: string;
+  serviceDescription: string[];
+  images: {
+    img: string;
+    masonry: string;
+  }[];
+}
 
 const Banner = () => {
-  const bannerItems = [
-    { image: image1, name: "Natalie & Marcus", category: "" },
-    { image: image2, name: "Alisa's Snaps", category: "" },
-    { image: image3, name: "", category: "" },
-    { image: image4, name: "", category: "" },
-    { image: image5, name: "", category: "" },
-    { image: image6, name: "", category: "" },
-    { image: image7, name: "", category: "" },
-    { image: image8, name: "", category: "" },
-    { image: image9, name: "", category: "" },
-    { image: image10, name: "", category: "" },
-  ];
-  return (
-    <div className="pb-2">
-      <div className="md:grid grid-cols-1 md:grid-cols-2 gap-2 px-2 lg:px-0 hidden">
-        <div className="object-cover">
-          <Image className="w-full h-full" src={image1} alt="" />
-        </div>
-        <div className="grid grid-cols-2 gap-2">
-          <div className="overflow-hidden ">
-            <Image className="w-full h-full" src={image2} alt="" />
-          </div>
-          <div className="overflow-hidden ">
-            <Image className="w-full h-full" src={image3} alt="" />
-          </div>
-          <div className="overflow-hidden">
-            <Image className="w-full h-full" src={image4} alt="" />
-          </div>
-          <div className="overflow-hidden">
-            <Image className="w-full h-full" src={image5} alt="" />
-          </div>
-        </div>
-      </div>
-      <div className="md:grid grid-cols-1 md:grid-cols-2 gap-2 px-2 pt-2 lg:px-0 hidden">
-        <div className="grid grid-cols-2 gap-2">
-          <div className="overflow-hidden">
-            <Image className="w-full h-full" src={image6} alt="" />
-          </div>
-          <div className="overflow-hidden">
-            <Image className="w-full h-full" src={image7} alt="" />
-          </div>
-          <div className="overflow-hidden">
-            <Image className="w-full h-full" src={image8} alt="" />
-          </div>
-          <div className="overflow-hidden">
-            <Image className="w-full h-full" src={image9} alt="" />
-          </div>
-        </div>
-        <div className="object-cover">
-          <Image className="w-full h-full" src={image10} alt="" />
-        </div>
-      </div>
+  const [bannerData, setBannerData] = useState<IServiceData[]>([]);
+  useEffect(() => {
+    fetch(
+      "https://photography-portfolio-backend.vercel.app/api/v1.0/photography/getAllPhotographys"
+    )
+      .then((response) => response.json())
+      .then((data: IServiceData[]) => setBannerData(data.data));
+  }, []);
 
-      {bannerItems.map((data, index) => (
-        <div key={index} className="pb-2 px-2 md:hidden">
-          <Image className="w-full h-full" src={data.image} alt="" />
-        </div>
-      ))}
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+  return (
+    <div className="">
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-4 gap-2 px-2 lg:px-0">
+        {bannerData.map((data, index) => (
+          <Link
+            href={`services/${data._id}`}
+            key={index}
+            className={`w-full h-full overflow-hidden ${
+              index === 0 || index === 5
+                ? "col-span-2 row-span-2"
+                : index === 7
+                ? "col-span-1 row-span-2"
+                : "col-span-1 row-span-1"
+            }`}
+          >
+            <Image
+              height={500}
+              width={500}
+              className="w-full h-full object-cover"
+              src={data.serviceCardImage}
+              alt=""
+            />
+          </Link>
+        ))}
+      </div>
+      {/* Mobile  */}
+      <Swiper
+        spaceBetween={10}
+        slidesPerView={1}
+        loop={true}
+        pagination={{ clickable: true, dynamicBullets: true }}
+        modules={[Pagination]}
+      >
+        {bannerData.map((data, index) => (
+          <SwiperSlide key={index}>
+            <Link
+              href={`services/${data.serviceName}`}
+              className="w-full h-full overflow-hidden md:hidden"
+            >
+              <Image
+                height={500}
+                width={500}
+                className="w-full h-full object-cover"
+                src={data.serviceCardImage}
+                alt={data.serviceName}
+              />
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

@@ -20,17 +20,27 @@ body {
 .titleFont {
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
 }
 
 .widget {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 200%;
-    height: calc(50% + 35px);
-    bottom: 0;
-    left: -50%;
-    background-color: #f5f0eb;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 200%;
+  height: calc(50% + 35px);
+  bottom: 0;
+  left: -50%;
+  background-color: #f5f0eb;
+}
+
+/* swiper */
+
+/* .swiper-pagination-bullet-active {
+  background: "#6E717A" !important;
+} */
+
+.swiper-pagination-bullet {
+  background: #6e717a !important;
 }

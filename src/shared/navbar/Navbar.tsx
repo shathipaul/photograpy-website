@@ -45,7 +45,7 @@ const Navbar = () => {
   }, [isOpen]);
   const menuData = [
     { title: "Home", link: "/" },
-    { title: "About", link: "/" },
+    { title: "About", link: "/about" },
     { title: "Services", link: "/services" },
     { title: "Blogs", link: "/" },
     { title: "Pricing", link: "/" },
@@ -53,7 +53,7 @@ const Navbar = () => {
   ];
   const menuItemsLeft = [
     { title: "Home", link: "/" },
-    { title: "About", link: "/" },
+    { title: "About", link: "/about" },
     { title: "Services", link: "/services" },
   ];
   const menuItemsRight = [

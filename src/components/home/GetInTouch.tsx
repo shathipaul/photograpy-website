@@ -1,6 +1,7 @@
 import image from "@/assets/images/home/get-in-touch/img.png";
 import Image from "next/image";
 import Link from "next/link";
+import GetInTouchBtn from "../common/GetInTouchBtn";
 
 const GetInTouch = () => {
   return (
@@ -8,7 +9,7 @@ const GetInTouch = () => {
       <div className="max-w-[400px]">
         <Image className="w-full" src={image} alt="" />
       </div>
-      <h2 className="titleFont uppercase text-primary tracking-widest text-center text-3xl lg:text-5xl font-bold">
+      <h2 className="titleFont capitalize text-primary tracking-widest text-center text-3xl lg:text-5xl font-bold">
         You just enjoy your day!
       </h2>
       <p className="max-w-3xl text-center text-secondary px-4 pb-6">
@@ -19,12 +20,7 @@ const GetInTouch = () => {
         neccu, per an vidit corpora. ommo dare. Eu alia admodum volup tua cu
         hend.
       </p>
-      <Link
-        href={"/"}
-        className="titleFont uppercase font-medium tracking-widest border border-secondary text-primary hover:bg-secondary hover:text-white hover:font-semibold rounded px-20 py-4"
-      >
-        Get in touch
-      </Link>
+      <GetInTouchBtn />
     </div>
   );
 };
