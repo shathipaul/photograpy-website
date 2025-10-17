@@ -7,6 +7,8 @@ import Head from "next/head";
 import "../styles/globals.css";
 import Loader from "@/components/common/Loader";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -43,6 +45,7 @@ export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       </Head>
       {/* Body Section */}
       {getLayout(<Component {...pageProps} />)}
+      <ToastContainer />
     </QueryClientProvider>
   );
 }

@@ -2,13 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   reactStrictMode: true,
-  output: "export",
-  images: { unoptimized: true },
+  // output: "export",
+  // images: { unoptimized: true },
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "i.ibb.co",
+        hostname: "i.ibb.co.com",
       },
     ],
   },

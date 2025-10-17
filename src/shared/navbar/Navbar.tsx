@@ -49,7 +49,7 @@ const Navbar = () => {
     { title: "Services", link: "/services" },
     { title: "Blogs", link: "/" },
     { title: "Pricing", link: "/" },
-    { title: "Contact", link: "/" },
+    { title: "Contact", link: "/contact" },
   ];
   const menuItemsLeft = [
     { title: "Home", link: "/" },
@@ -59,7 +59,7 @@ const Navbar = () => {
   const menuItemsRight = [
     { title: "Blogs", link: "/" },
     { title: "Pricing", link: "/" },
-    { title: "Contact", link: "/" },
+    { title: "Contact", link: "/contact" },
   ];
   return (
     <nav className="bg-offWhite">

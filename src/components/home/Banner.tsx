@@ -34,7 +34,7 @@ const Banner = () => {
       "https://photography-portfolio-backend.vercel.app/api/v1.0/photography/getAllPhotographys"
     )
       .then((response) => response.json())
-      .then((data: IServiceData[]) => setBannerData(data.data));
+      .then((data) => setBannerData(data.data));
   }, []);
 
   const settings = {

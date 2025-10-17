@@ -44,3 +44,7 @@ body {
 .swiper-pagination-bullet {
   background: #6e717a !important;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: #6e717a !important;
+}

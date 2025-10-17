@@ -11,8 +11,8 @@ import {
 
 const Footer = () => {
   return (
-    <>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 items-center justify-items-center py-10 md:py-20 bg-offWhite">
+    <div className="bg-offWhite">
+      <div className="container grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-10 items-center justify-items-center py-10 md:py-20 ">
         <Link href={"/"} className="max-w-[160px] m-auto md:hidden">
           <Image className="w-full" src={logo} alt="" priority />
         </Link>
@@ -26,7 +26,7 @@ const Footer = () => {
             <TfiLineDashed />
             <FaLinkedinIn />
           </div>
-          <p className="text-secondary">Solene@qodeinteractive.com</p>
+          <p className="text-secondary">info@georgiaphotography.com</p>
         </div>
         <Link href={"/"} className="max-w-[160px] m-auto hidden md:block">
           <Image className="w-full" src={logo} alt="" priority />
@@ -46,7 +46,7 @@ const Footer = () => {
       <div className="bg-catSkillWhite text-secondary flex justify-center items-center py-4">
         <p>© 2020 Qode Interactive, All Rights Reserved</p>
       </div>
-    </>
+    </div>
   );
 };
 

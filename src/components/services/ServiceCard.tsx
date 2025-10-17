@@ -17,7 +17,7 @@ interface IServiceData {
 const ServiceCard = ({ data }: { data: IServiceData }) => {
   return (
     <>
-      <Link href={`/services/${data._id}`}>
+      <Link href={`/services/${data._id}`} className="max-h-[400px]">
         <Image
           width={500}
           height={500}

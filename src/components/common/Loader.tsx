@@ -11,11 +11,11 @@ const Loader = () => {
         height: "100vh",
       }}
     >
-      <Lottie
+      {/* <Lottie
         animationData={loaderAnimation}
         loop
         style={{ height: "200px", width: "200px" }}
-      />
+      /> */}
     </div>
   );
 };

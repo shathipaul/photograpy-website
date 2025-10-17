@@ -28,7 +28,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="container py-4 md:py-10">
+    <div className="container">
       <h3 className="titleFont capitalize text-primary tracking-widest text-center text-3xl md:text-5xl font-bold">
         Our Services
       </h3>
