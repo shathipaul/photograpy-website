@@ -7,7 +7,7 @@ const Inputfield = ({
   placeholder,
   required,
   customClass,
-}) => {
+}: any) => {
   return (
     <div className="w-full py-2">
       <label className="capitalize text-secondary text-sm font-medium">

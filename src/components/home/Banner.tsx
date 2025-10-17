@@ -1,14 +1,4 @@
 import Image from "next/image";
-import image1 from "@/assets/images/samantha/2.jpg";
-import image2 from "@/assets/images/samantha/10.jpg";
-import image3 from "@/assets/images/samantha/1.jpg";
-import image4 from "@/assets/images/samantha/3.jpg";
-import image5 from "@/assets/images/samantha/5.jpg";
-import image6 from "@/assets/images/anotherWedding/1.jpg";
-import image7 from "@/assets/images/anotherWedding/2.jpg";
-import image8 from "@/assets/images/anotherWedding/7.jpg";
-import image9 from "@/assets/images/anotherWedding/4.jpg";
-import image10 from "@/assets/images/anotherWedding/11.jpg";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
