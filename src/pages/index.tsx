@@ -7,8 +7,8 @@ import { ReactElement } from "react";
 export default function Home() {
   return (
     <div className="container">
-      <Banner />
       <GetInTouch />
+      <Banner />
       <Follow />
     </div>
   );

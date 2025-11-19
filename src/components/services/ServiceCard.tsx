@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import placeholder from "@/assets/images/placeholder.png";
 
 interface IServiceData {
   _id: string;
@@ -17,13 +18,19 @@ interface IServiceData {
 const ServiceCard = ({ data }: { data: IServiceData }) => {
   return (
     <>
-      <Link href={`/services/${data._id}`} className="max-h-[400px]">
+      <Link
+        href={`/services/${data._id}`}
+        className="max-h-[275px] w-full overflow-hidden"
+      >
         <Image
           width={500}
           height={500}
           src={data.serviceCardImage}
           alt=""
           priority
+          className="w-full h-full object-cover object-top"
+          placeholder="blur"
+          blurDataURL={placeholder.src}
         />
       </Link>
       <div className="md:py-2 px-2 md:px-10 text-center">

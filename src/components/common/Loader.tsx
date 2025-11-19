@@ -1,5 +1,4 @@
-import Lottie from "lottie-react";
-import loaderAnimation from "../../../public/loaderAnimation.json";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const Loader = () => {
   return (
@@ -11,11 +10,12 @@ const Loader = () => {
         height: "100vh",
       }}
     >
-      {/* <Lottie
-        animationData={loaderAnimation}
+      <DotLottieReact
+        className="lg:w-[400px] z-30"
+        src="/loaderAnimation.json"
         loop
-        style={{ height: "200px", width: "200px" }}
-      /> */}
+        autoplay
+      />
     </div>
   );
 };

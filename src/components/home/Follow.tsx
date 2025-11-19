@@ -8,10 +8,11 @@ import image6 from "@/assets/images/home/follow/6.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Pagination } from "swiper/modules";
+import placeholder from "@/assets/images/placeholder.png";
 
 const Follow = () => {
   return (
-    <div className="flex flex-col justify-items-center items-center gap-4 lg:gap-6 py-4 md:py-8">
+    <div className="flex flex-col justify-items-center items-center gap-4 lg:gap-6 py-4 md:py-8 mt-16">
       <h3 className="titleFont capitalize text-primary tracking-widest text-center text-3xl lg:text-5xl font-bold">
         Follow me on Instagram
       </h3>
@@ -44,22 +45,58 @@ const Follow = () => {
           </div>
         </Swiper> */}
         <div className="mb-10">
-          <Image src={image1} alt="" />
+          <Image
+            src={image1}
+            alt=""
+            priority
+            placeholder="blur"
+            blurDataURL={placeholder.src}
+          />
         </div>
         <div className="mt-10">
-          <Image src={image2} alt="" />
+          <Image
+            src={image2}
+            alt=""
+            priority
+            placeholder="blur"
+            blurDataURL={placeholder.src}
+          />
         </div>
         <div className="mb-10">
-          <Image src={image3} alt="" />
+          <Image
+            src={image3}
+            alt=""
+            priority
+            placeholder="blur"
+            blurDataURL={placeholder.src}
+          />
         </div>
         <div className="mt-10">
-          <Image src={image4} alt="" />
+          <Image
+            src={image4}
+            alt=""
+            priority
+            placeholder="blur"
+            blurDataURL={placeholder.src}
+          />
         </div>
         <div className="mb-10">
-          <Image src={image5} alt="" />
+          <Image
+            src={image5}
+            alt=""
+            priority
+            placeholder="blur"
+            blurDataURL={placeholder.src}
+          />
         </div>
         <div className="mt-10">
-          <Image src={image6} alt="" />
+          <Image
+            src={image6}
+            alt=""
+            priority
+            placeholder="blur"
+            blurDataURL={placeholder.src}
+          />
         </div>
       </div>
     </div>

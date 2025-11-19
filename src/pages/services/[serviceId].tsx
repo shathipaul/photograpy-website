@@ -7,6 +7,7 @@ import MainLayout from "@/layout/MainLayout";
 import Follow from "@/components/home/Follow";
 import GetInTouchBtn from "@/components/common/GetInTouchBtn";
 import { useQuery } from "@tanstack/react-query";
+import placeholder from "@/assets/images/placeholder.png";
 
 interface IServiceData {
   _id: string;
@@ -22,26 +23,8 @@ interface IServiceData {
 }
 
 const ServiceDetails = () => {
-  // const [service, setService] = useState(null);
   const router = useRouter();
   const serviceId = router.query.serviceId;
-
-  // useEffect(() => {
-  //   fetch(
-  //     `https://photography-portfolio-backend.vercel.app/api/v1.0/photography/getPhotographysDetails/${serviceId}`
-  //   )
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       if (data.success) {
-  //         setService(data.data);
-  //       } else {
-  //         console.error("Error fetching data:", data.message);
-  //       }
-  //     })
-  //     .catch((error) => console.error("Fetch error:", error));
-  // }, [serviceId]);
-
-  // console.log(service);
 
   const { data, isLoading } = useQuery({
     queryKey: ["serviceDetailsById", serviceId],
@@ -79,6 +62,9 @@ const ServiceDetails = () => {
               width={800}
               src={service.serviceCardImage}
               alt=""
+              priority
+              placeholder="blur"
+              blurDataURL={placeholder.src}
             />
           </div>
           <div className="flex flex-col gap-4 justify-center items-center pe-10 py-10">
@@ -109,6 +95,9 @@ const ServiceDetails = () => {
                 src={img.img}
                 alt="Masonry-Img"
                 className="w-full h-full object-cover"
+                priority
+                placeholder="blur"
+                blurDataURL={placeholder.src}
               />
             </div>
           ))}

@@ -4,6 +4,10 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
 import { Pagination } from "swiper/modules";
+import Loader from "../common/Loader";
+import placeholder from "@/assets/images/placeholder.png";
+import OpacityTransition from "../animations/OpacityTransition";
+
 interface IServiceData {
   _id: string;
   serviceName: string;
@@ -18,13 +22,19 @@ interface IServiceData {
 }
 
 const Banner = () => {
+  const [loading, setLoading] = useState(true);
   const [bannerData, setBannerData] = useState<IServiceData[]>([]);
   useEffect(() => {
     fetch(
       "https://photography-portfolio-backend.vercel.app/api/v1.0/photography/getAllPhotographys"
     )
       .then((response) => response.json())
-      .then((data) => setBannerData(data.data));
+      .then((data) => {
+        if (data?.success === true) {
+          setBannerData(data.data);
+          setLoading(false);
+        }
+      });
   }, []);
 
   const settings = {
@@ -34,57 +44,70 @@ const Banner = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
-    <div className="">
-      <div className="hidden md:grid grid-cols-1 md:grid-cols-4 gap-2 px-2 lg:px-0">
-        {bannerData.map((data, index) => (
-          <Link
-            href={`services/${data._id}`}
-            key={index}
-            className={`w-full h-full overflow-hidden ${
-              index === 0 || index === 5
-                ? "col-span-2 row-span-2"
-                : index === 7
-                ? "col-span-1 row-span-2"
-                : "col-span-1 row-span-1"
-            }`}
-          >
-            <Image
-              height={500}
-              width={500}
-              className="w-full h-full object-cover"
-              src={data.serviceCardImage}
-              alt=""
-            />
-          </Link>
-        ))}
-      </div>
-      {/* Mobile  */}
-      <Swiper
-        spaceBetween={10}
-        slidesPerView={1}
-        loop={true}
-        pagination={{ clickable: true, dynamicBullets: true }}
-        modules={[Pagination]}
-      >
-        {bannerData.map((data, index) => (
-          <SwiperSlide key={index}>
+    <OpacityTransition>
+      <div className="">
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-4 gap-2 px-2 lg:px-0">
+          {bannerData.map((data, index) => (
             <Link
-              href={`services/${data.serviceName}`}
-              className="w-full h-full overflow-hidden md:hidden"
+              href={`services/${data._id}`}
+              key={index}
+              className={`w-full h-full overflow-hidden ${
+                index === 0 || index === 5
+                  ? "col-span-2 row-span-2"
+                  : index === 7
+                  ? "col-span-1 row-span-2"
+                  : "col-span-1 row-span-1"
+              }`}
             >
               <Image
                 height={500}
                 width={500}
                 className="w-full h-full object-cover"
                 src={data.serviceCardImage}
-                alt={data.serviceName}
+                alt=""
+                priority
+                placeholder="blur"
+                blurDataURL={placeholder.src}
               />
             </Link>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+          ))}
+        </div>
+        {/* Mobile  */}
+        <Swiper
+          spaceBetween={10}
+          slidesPerView={1}
+          loop={true}
+          pagination={{ clickable: true, dynamicBullets: true }}
+          modules={[Pagination]}
+        >
+          {bannerData.map((data, index) => (
+            <SwiperSlide key={index}>
+              <Link
+                href={`services/${data.serviceName}`}
+                className="w-full h-full overflow-hidden md:hidden"
+              >
+                <Image
+                  height={500}
+                  width={500}
+                  className="w-full h-full object-cover"
+                  src={data.serviceCardImage}
+                  alt={data.serviceName}
+                  priority
+                  placeholder="blur"
+                  blurDataURL={placeholder.src}
+                />
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </OpacityTransition>
   );
 };
 

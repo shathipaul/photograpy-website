@@ -5,7 +5,7 @@ import GetInTouchBtn from "../common/GetInTouchBtn";
 
 const GetInTouch = () => {
   return (
-    <div className="flex flex-col items-center gap-4 lg:gap-6 py-8">
+    <div className="flex flex-col items-center gap-4 lg:gap-6 py-8 min-h-[650px]">
       <div className="max-w-[400px]">
         <Image className="w-full" src={image} alt="" />
       </div>
