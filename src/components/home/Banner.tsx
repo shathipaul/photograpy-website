@@ -89,7 +89,7 @@ const Banner = () => {
           {bannerData.map((data, index) => (
             <SwiperSlide key={index}>
               <Link
-                href={`services/${data.serviceName}`}
+                href={`services/${data._id}`}
                 className="w-full h-full overflow-hidden md:hidden"
               >
                 <Image

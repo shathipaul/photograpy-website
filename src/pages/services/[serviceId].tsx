@@ -46,7 +46,7 @@ const ServiceDetails = () => {
   console.log(service);
 
   return (
-    <div className="container">
+    <div className="container lg:px-4">
       <div className="flex flex-col justify-items-center items-center gap-2 py-4 md:py-10">
         <h3 className="titleFont capitalize text-primary tracking-widest text-center text-3xl md:text-5xl font-bold">
           {service.serviceName}
@@ -54,7 +54,7 @@ const ServiceDetails = () => {
         <span className="text-lg tracking-widest text-secondary">
           {service.serviceTakerName}
         </span>
-        <div className="grid grid-cols-2 gap-10 my-10 bg-white">
+        <div className="grid lg:grid-cols-2 gap-0 lg:gap-10 my-10 bg-white">
           <div className="w-full h-full overflow-hidden">
             <Image
               className="w-full h-full object-cover"
@@ -67,7 +67,7 @@ const ServiceDetails = () => {
               blurDataURL={placeholder.src}
             />
           </div>
-          <div className="flex flex-col gap-4 justify-center items-center pe-10 py-10">
+          <div className="flex flex-col gap-4 justify-center items-center px-4 lg:px-0 lg:pe-10 py-10">
             <p>{service.serviceDescription[0]}</p>
             <p>{service.serviceDescription[1]}</p>
             <p>{service.serviceDescription[2]}</p>

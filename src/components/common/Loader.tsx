@@ -11,7 +11,7 @@ const Loader = () => {
       }}
     >
       <DotLottieReact
-        className="lg:w-[400px] z-30"
+        className="w-[300px] lg:w-[400px] z-30"
         src="/loaderAnimation.json"
         loop
         autoplay
