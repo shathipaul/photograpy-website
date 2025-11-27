@@ -6,7 +6,7 @@ import FollowSection from "./Follow";
 
 const About = () => {
   return (
-    <div className="col-span-1">
+    <div className="col-span-1 static md:sticky md:top-16 h-[730px]">
       <div className="relative w-full h-[400px] px-4 pt-4 pb-8 bg-primary/10 overflow-hidden">
         <span className="absolute block bg-primary/70 -rotate-2 w-12 h-4 top-3 left-1/2 -translate-x-1/2"></span>
         <Image
