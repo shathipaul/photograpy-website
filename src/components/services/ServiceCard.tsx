@@ -44,7 +44,7 @@ const ServiceCard = ({ data }: { data: IServiceData }) => {
         >
           <span className="absolute top-0 right-0 w-[50px] h-[1px] bg-primary transition-all duration-300 ease-in-out group-hover:w-full me-6"></span>
           <div className="py-4 block">View Details</div>
-          <span className="absolute bottom-0 left-0 w-[50px] h-[2px] bg-primary transition-all duration-300 ease-in-out group-hover:w-full ms-6"></span>
+          <span className="absolute bottom-0 left-0 w-[50px] h-[1px] bg-primary transition-all duration-300 ease-in-out group-hover:w-full ms-6"></span>
         </Link>
       </div>
     </>

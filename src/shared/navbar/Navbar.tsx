@@ -47,7 +47,7 @@ const Navbar = () => {
     { title: "Home", link: "/" },
     { title: "About", link: "/about" },
     { title: "Services", link: "/services" },
-    { title: "Blogs", link: "/" },
+    { title: "Blogs", link: "/blogs" },
     { title: "Pricing", link: "/" },
     { title: "Contact", link: "/contact" },
   ];
@@ -57,7 +57,7 @@ const Navbar = () => {
     { title: "Services", link: "/services" },
   ];
   const menuItemsRight = [
-    { title: "Blogs", link: "/" },
+    { title: "Blogs", link: "/blogs" },
     { title: "Pricing", link: "/" },
     { title: "Contact", link: "/contact" },
   ];
